@@ -1,0 +1,4 @@
+D:\KPI\3 курс\Bee_Productive\BackEnd\BLL\bin\Debug\netcoreapp3.0\DAL.dll
+D:\KPI\3 курс\Bee_Productive\BackEnd\BLL\obj\Debug\netcoreapp3.0\BLL.csprojAssemblyReference.cache
+D:\KPI\3 курс\Bee_Productive\BackEnd\BLL\obj\Debug\netcoreapp3.0\BLL.AssemblyInfoInputs.cache
+D:\KPI\3 курс\Bee_Productive\BackEnd\BLL\obj\Debug\netcoreapp3.0\BLL.AssemblyInfo.cs
