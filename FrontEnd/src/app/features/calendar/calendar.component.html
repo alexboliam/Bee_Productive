@@ -1,0 +1,28 @@
+<div class="p-col-12">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <div class="app-top">
+        <button type="button" class="btn btn-primary" (click)="toggleVisible()">toggle visible</button>
+        <button type="button" class="btn btn-primary" (click)="toggleWeekends()">toggle weekends</button>
+        <button type="button" class="btn btn-primary" (click)="gotoPast()">go to a date in the past</button>
+        (also, click a date/time to add an event)
+      </div>
+    </div>
+    <div class="p-col-12" *ngIf="calendarVisible">
+      <full-calendar
+        #calendar
+        [defaultView]="calendarOptions.defaultView"
+        [header]="calendarOptions.header"
+        [height]="calendarOptions.height"
+        [themeSystem]="calendarOptions.themeSystem"
+        [plugins]="calendarOptions.plugins"
+        [editable]="calendarOptions.editable"
+        [eventLimit]="calendarOptions.eventLimit"
+        [businessHours]="calendarOptions.businessHours"
+        [weekends]="calendarWeekends"
+        [events]="calendarOptions.events"
+        (dateClick)="handleDateClick($event)"
+      ></full-calendar>
+    </div>
+  </div>
+</div>

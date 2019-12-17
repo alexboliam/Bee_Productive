@@ -1,0 +1,124 @@
+<div class="p-col-12">
+  <div class="p-grid">
+    <div class="p-col-12"></div>
+    <div class="p-col-12">
+      <div class="p-grid p-justify-around">
+        <div [ngClass]="!addFilesButton? 'p-col-8' : 'p-col' " class="p-col-align-stretch" [@animation]="'visible'">
+            <div class="box">
+              <h3 class="title">
+                Create new task
+              </h3>
+              <form
+                class="form"
+                (ngSubmit)="createTaskHendler()"
+                #taskForm="ngForm"
+                ngNativeValidate
+              >
+                <input name="uid" type="hidden" [(ngModel)]="taskObj.uid" />
+                <div class="input-box form-group">
+                  <label class="label" for="title">Title</label>
+                  <input
+                    class="input form-control"
+                    id="title"
+                    name="title"
+                    type="text"
+                    required
+                    placeholder="Task title"
+                    [(ngModel)]="taskObj.title"
+                  />
+                </div>
+                <div class="input-box form-group">
+                  <label class="label" for="description">Description</label>
+                  <textarea
+                    class="input form-control"
+                    id="description"
+                    name="description"
+                    required
+                    placeholder="Task description"
+                    [(ngModel)]="taskObj.description"
+                    rows="3"
+                  ></textarea>
+                </div>
+                <div class="input-box form-group">
+                  <label class="label" for="comment">Comment</label>
+                  <input
+                    class="input form-control"
+                    id="comment"
+                    name="comment"
+                    type="text"
+                    placeholder="Task comment"
+                    [(ngModel)]="taskObj.comment"
+                  />
+                </div>
+                <div class="input-box form-group">
+                  <label for="Priority" class="control-label">Priority</label>
+                  <select
+                    class="form-control"
+                    id="Priority"
+                    required
+                    name="selectedPriority"
+                    (change)="handleSelectedPriority($event.target.value)"
+                    >
+                    <option [value]="0" disabled>Task priority</option>
+                    <option
+                      *ngFor="let priority of priorityAryy"
+                      [value]="priority"
+                      >{{ priority }}</option
+                    >
+                  </select>
+                </div>
+                <div class="input-box form-group">
+                  <p-toggleButton
+                    onLabel="Cancel"
+                    offLabel="Add files"
+                    onIcon="fa fa-paperclip"
+                    offIcon="fa fa-paperclip"
+                    iconPos="left"
+                    [(ngModel)]="addFilesButton"
+                    name="addFilesButton"
+                  ></p-toggleButton>
+                </div>
+                  <button class="btn btn-primary" type="submit">
+                    Create
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="resetProperties()"
+                  >
+                    Cancel
+                  </button>
+              </form>
+            </div>
+        </div>
+        <div [ngClass]="addFilesButton? 'p-col-8' : '' " class="p-col-align-stretch" *ngIf="addFilesButton" [@animation]="'visible'">
+            <div class="box">
+              <div class="p-grid">
+                <div class="p-col-12">
+                  <p-tabView (onChange)="handleUploadTab($event)">
+                    <p-tabPanel
+                      header="Documents"
+                      leftIcon="fa fa-file-word"
+                      tooltip="{{documentsToUpload.length}} Documents added"
+                    >
+                      <app-uploader [filesType]="filesType"></app-uploader>
+                    </p-tabPanel>
+                    <p-tabPanel
+                      header="Images"
+                      rightIcon="fa fa-images"
+                      tooltip="{{imagesToUpload.length}} Images added"
+                    >
+                      <app-uploader [filesType]="filesType"></app-uploader>
+                    </p-tabPanel>
+                  </p-tabView>
+                  <br>
+
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-col-12"></div>
+  </div>
+</div>

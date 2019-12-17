@@ -1,0 +1,71 @@
+<div class="container" [class.darkMode]="isDarkMode">
+  <div class="header">
+    <ng-content select="h3"></ng-content>
+    <ng-content id="close" select="a"></ng-content>
+  </div>
+  <div class="form-container">
+    <form class="form" (ngSubmit)="onSave()" #taskForm="ngForm">
+      <input name="id" type="hidden" [(ngModel)]="taskObj.id" />
+      <input name="uid" type="hidden" [(ngModel)]="taskObj.uid" />
+      <div class="input-box form-group">
+        <label class="label" for="title">Title</label>
+        <input
+          class="input form-control"
+          id="title"
+          name="title"
+          type="text"
+          required
+          placeholder="Task title"
+          [(ngModel)]="taskObj.title"
+        />
+      </div>
+      <div class="input-box form-group">
+        <label class="label" for="description">Description</label>
+        <input
+          class="input form-control"
+          id="description"
+          name="description"
+          type="text"
+          required
+          placeholder="Task description"
+          [(ngModel)]="taskObj.description"
+        />
+      </div>
+      <div class="input-box form-group">
+        <label class="label" for="comment">Comment</label>
+        <input
+          class="input form-control"
+          id="comment"
+          name="comment"
+          type="text"
+          placeholder="Task comment"
+          [(ngModel)]="taskObj.comment"
+        />
+      </div>
+      <div class="input-box form-group">
+        <label for="Priority" class="control-label">Priority</label>
+        <select
+          class="form-control"
+          [class.required]="
+            trvselectedPriority.errors &&
+            (trvselectedPriority.dirty || trvselectedPriority.touched)
+          "
+          id="Priority"
+          required
+          name="Priority"
+          [(ngModel)]="selectedPriority"
+          #trvselectedPriority="ngModel"
+        >
+          <option value="" disabled selected></option>
+          <option *ngFor="let priority of priorityAryy" [value]="priority">{{
+            priority
+          }}</option>
+        </select>
+      </div>
+      <div class="button">
+        <ng-content select=".save"></ng-content>
+        <ng-content select=".cancel"></ng-content>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<p>
+</p>
+<p>=====================================================</p>
+<h3>Dynamic</h3>
+<button
+  pButton
+  type="button"
+  icon="pi pi-plus"
+  title="Add Column"
+  (click)="addColumn()"
+  style="margin-right: .5em"
+>
+  add
+</button>
+<button
+  pButton
+  type="button"
+  icon="pi pi-minus"
+  title="Remove Column"
+  (click)="removeColumn()"
+>
+  remove
+</button>
+
+<div class="p-grid" style="margin-top: .5em">
+  <div class="p-col">
+    <div class="box">1</div>
+  </div>
+  <div class="p-col" *ngIf="columns">
+    <div class="box">2</div>
+  </div>
+</div>

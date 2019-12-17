@@ -1,0 +1,119 @@
+<div class="p-col-12 wrapper" *ngIf="filesList.length > 0">
+  <div class="p-grid sub-wrapper">
+    <div class="p-col-12">
+      <button class="files-view-bth">
+        <span class="icon" (click)="collectionView = !collectionView">
+          <i class="{{ collectionView ? 'fa fa-table' : 'fa fa-th-list' }}"></i>
+        </span>
+      </button>
+    </div>
+    <div class="p-col-12">
+      <div class="files-collection" *ngIf="collectionView">
+        <div *ngFor="let file of filesList">
+          <div
+            class="collection-file-box"
+            *ngIf="file.fileType === 1 && file.url as url"
+          >
+            <img
+              class="collection-file-img"
+              src="assets/img/documents/unknown-type.png"
+            />
+            <br />
+            <div class="collection-file-details">
+                <div class="file-title">
+                  <span>{{ file.name }}</span>
+                </div>
+                <div class="file-details">
+                    <span>File Name</span><br>
+                    <span>{{ file.name }}</span>
+                  <a
+                    class="collection-link"
+                    [href]="url"
+                    target="_blank"
+                    rel="noopener"
+                    >{{ file.name }}</a
+                  >
+                  <span (click)="onDeleteFile(file)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+                </div>
+              </div>
+          </div>
+          <div
+            class="collection-file-box"
+            *ngIf="file.fileType === 2 && file.url as url"
+          >
+            <img class="collection-file-img" [src]="url" /><br />
+            <div class="collection-file-details">
+              <div class="file-title">
+                <span>{{ file.name }}</span>
+              </div>
+              <div class="file-details">
+                  <span>File Name</span><br>
+                  <span>{{ file.name }}</span>
+                  <br>
+                  <br>
+                <a
+                  class="collection-link"
+                  [href]="url"
+                  target="_blank"
+                  rel="noopener"
+                  ><i class="fa fa-download" aria-hidden="true"></i></a
+                >
+                <span (click)="onDeleteFile(file)"><i class="fa fa-trash" aria-hidden="true"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ================================================-->
+      <div class="files-list" *ngIf="!collectionView">
+        <table class="table table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Create At</th>
+              <th scope="col">Size</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let file of filesList">
+            <tr *ngIf="file.fileType === 1 && file.url as url">
+              <th scope="row">
+                <img
+                  class="list-file-img"
+                  src="assets/img/documents/unknown-type.png"
+                />
+              </th>
+              <td>
+                <a
+                  class="list-link"
+                  [href]="url"
+                  target="_blank"
+                  rel="noopener"
+                  >{{ file.name }}</a
+                >
+              </td>
+              <td>{{ file.createdDate }}</td>
+              <td>-</td>
+              <td><span (click)="onDeleteFile(file)"><i class="fa fa-trash" aria-hidden="true"></i></span></td>
+            </tr>
+            <tr *ngIf="file.fileType === 2 && file.url as url">
+              <th scope="row"><img class="list-file-img" [src]="url" /></th>
+              <td>
+                <a
+                  class="list-link"
+                  [href]="url"
+                  target="_blank"
+                  rel="noopener"
+                  >{{ file.name }}</a
+                >
+              </td>
+              <td>{{ file.createdDate }}</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="p-col-12 content">
+  <div class="p-grid content">
+    <div class="p-col-12 content">
+      <div class="p-grid content">
+        <div class="p-col content">
+          <div class="box content">
+            <div
+              class="dropzone"
+              appFileDrop
+              (filesDropped)="handleDrop($event)"
+              (filesHovered)="dropzonState($event)"
+              [class.activeHovering]="dropzonActive"
+            >
+              <h2>Drop File</h2>
+              <div class="file">
+                <label class="file-label">
+                  <input
+                    class="file-input"
+                    type="file"
+                    (change)="handleDrop($event.target.files)"
+                  />
+                  <span class="file-cta">
+                    <span class="file-icon">
+                      <i class="fa fa-cloud-upload fa-2x"></i>
+                    </span>
+                    <h5 class="file-label">
+                      Click here or drag your files
+                    </h5>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="p-col content"
+          *ngIf="documents.length > 0 || images.length > 0"
+        >
+          <div class="box content files-container">
+            <div class="files">
+              <div class="files-list" *ngIf="filesType && documents.length > 0">
+                <ul>
+                  <li *ngFor="let file of documents">
+                    <app-upload-task
+            [file]="file"
+            (handleDeleteFile)="deleteFile($event)"
+          ></app-upload-task>
+                  </li>
+                </ul>
+              </div>
+              <div class="files-list" *ngIf="!filesType && images.length > 0">
+                <ol>
+                  <li *ngFor="let file of images">
+                    <app-upload-task
+                              [file]="file"
+                              (handleDeleteFile)="deleteFile($event)"
+                            ></app-upload-task>
+                  </li>
+                </ol>
+              </div>
+            </div>
+            <div class="files-buttons">
+              <span (click)="onDeleteAllFiles()"
+                ><i class="fa fa-trash"></i
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================= -->
+<!-- <div class="files-container" *ngIf="documents.length > 0">
+    <div class="files-border">
+      <div class="files" id="files">
+        <div class="file" *ngFor="let file of documents">
+          <app-upload-task
+            [file]="file"
+            (handleUploadFile)="uploadFile($event)"
+            (handleDeleteFile)="deleteFile($event)"
+          ></app-upload-task>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span (click)="onUploadAllFiles()"
+        ><i class="fa fa-cloud-upload"></i
+      ></span>
+      <span (click)="onDeleteAllFiles()"><i class="fa fa-trash"></i></span>
+    </div>
+  </div> -->
+<!-- ============================== -->

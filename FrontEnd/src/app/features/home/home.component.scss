@@ -1,0 +1,163 @@
+// .container {
+//     height: 100%;
+//     width: 100%;
+//     margin: 0;
+//     padding: 2rem;
+//     color: #3e5065;
+//     .some_titel {
+//         animation-delay: .6s;
+//         font-family: Apple Chancery, cursive;
+//         font-size: 24px;
+//         line-height: 20px;
+//         padding: 10px;
+//     }
+//     .some_text {
+//         font-size: 1rem;
+
+//         a{
+//             color: #2f56b0;
+//             position: relative;
+//             text-decoration: none;
+//             transition: color .4s ease-out;
+//             &::after{
+//                 border-radius: 1em;
+//                 border-top: .1em solid #2f56b0;
+//                 content: "";
+//                 position: absolute;
+//                 right: 100%;
+//                 bottom: .14em;
+//                 left: 0;
+//                 transition: right .4s cubic-bezier(0, .5, 0, 1),
+//                             border-color .4s ease-out;
+//             }
+
+//             &:hover{
+//                 color: #457dfb;
+//                 text-decoration: none;
+//             }
+
+//             &:hover::after{
+//                 animation: anchor-underline 2s cubic-bezier(0,.5,0,1,) infinite;
+//                 border-color: #457dfb;
+//             }
+//         }
+//     }
+
+//     .down-arrow{
+//         animation: pulse 2s 3s ease-out infinite;
+//         position: absolute;
+//         bottom: 4vh;
+//         left: 0;
+//         right: 0;
+//         text-align: center;
+//         z-index: 10;
+
+//         i{
+//             animation: fade-slide-up 1s 1s ease-out forwards;
+//             opacity: 0;
+//         }
+//     }
+// }
+
+// .darkMode{
+//     color: beige;
+// }
+// .titel {
+//     animation-delay: .6s;
+//     font-family: Apple Chancery, cursive;
+//     font-size: 1rem;
+//     line-height: 20px;
+//     padding: 10px;
+// }
+// .text {
+//     font-size: 0.8rem;
+//     font-family: Apple Chancery, cursive;
+//     a{
+//         color: #2f56b0;
+//         position: relative;
+//         text-decoration: none;
+//         transition: color .4s ease-out;
+//         &::after{
+//             border-radius: 1em;
+//             border-top: .1em solid #2f56b0;
+//             content: "";
+//             position: absolute;
+//             right: 100%;
+//             bottom: .14em;
+//             left: 0;
+//             transition: right .4s cubic-bezier(0, .5, 0, 1),
+//                         border-color .4s ease-out;
+//         }
+
+//         &:hover{
+//             color: #457dfb;
+//             text-decoration: none;
+//         }
+
+//         &:hover::after{
+//             animation: anchor-underline 2s cubic-bezier(0,.5,0,1,) infinite;
+//             border-color: #457dfb;
+//         }
+//     }
+// }
+// .centered{
+//     text-align: center;
+// }
+// .animate-pop-in{
+//     animation: pop-in .6s cubic-bezier(0, .9, .3, 1.2) forwards;
+//     opacity: 0;
+// }
+
+// ===================================
+
+// .tagline {
+// 	font-size: 0.5em;
+// 	text-transform: uppercase;
+// }
+
+// .text{
+//     font-weight: 400;
+//     font-size: 0.75em;
+//     letter-spacing: 3px;
+//     line-height: 1.5em;
+//     // text-align: center;
+// }
+
+// .indented{
+//     text-indent: 3em;
+// }
+// .divider {
+// 	background: grey;
+// 	height: 2px;
+// 	margin: 1rem auto;
+// 	width: 5rem;
+// }
+
+.outer {
+  padding: 1rem;
+  text-align: center;
+  article {
+    column-count: 2;
+    column-gap: 1rem;
+
+    section {
+      column-count: 1;
+      column-gap: 3rem;
+
+      .title {
+        color: #252830;
+        font-family: "Playfair Display SC";
+        font-size: 1.875em;
+        font-weight: 500;
+      }
+
+      .text {
+        font-weight: 400;
+        font-size: 0.75em;
+        letter-spacing: 1px;
+        line-height: 1.5em;
+        // text-align: center;
+      }
+    }
+  }
+}

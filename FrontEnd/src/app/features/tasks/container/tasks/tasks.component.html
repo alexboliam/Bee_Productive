@@ -1,0 +1,79 @@
+<div class="containerr" [class.darkMode]="isDarkMode">
+
+  <div class="lists" *ngIf="allTasks.length > 0">
+    <app-tasks-schedule [allTasksList]="allTasks" [isDarkMode]="isDarkMode" (updataTaskStatusHandler)="updataTaskStatus($event)" (editTaskHandler)="editTaskHandler($event)" (deleteTaskHandler)="deleteTaskHendler($event)" (handleShowDetails)="showTaskDetails($event)"></app-tasks-schedule>
+  </div>
+  <div class="emptylist" *ngIf="allTasks.length == 0">
+      <img src="{{isDarkMode ? 'assets/img/empty_list_dark.png' : 'assets/img/empty_list.png'}}" alt="Empty list">
+  </div>
+  <router-outlet></router-outlet>
+</div>
+<div class="dialog-continer fadeIn" *ngIf="showDetails">
+  <div class="dialog">
+    <app-task-details [correntTask]="selectedTask" (handleCloseDetails)="onCloseDetails($event)"></app-task-details>
+  </div>
+
+</div>
+
+<div class="dialog-continer fadeIn" *ngIf="formDialogOpne || deleteDialogOpne">
+  <div class="dialog">
+
+    <div class="form" *ngIf="formDialogOpne">
+      <app-edit-task-form
+        [taskObj]="taskObj"
+        [isDarkMode]="isDarkMode"
+        (taskHendler)="taskFormHendler($event)"
+        (fileSelected)="handleSelectedFile($event)"
+      >
+        <h3 class="title">
+            {{ isNewTask? 'Add new task form' : 'Edit task form'}}
+        </h3>
+        <a id="close" (click)="resetProperties()"
+          ><i class="fa fa-close"></i
+        ></a>
+        <button class="save btn btn-primary" type="submit">
+            {{isNewTask? 'Add task' : 'Updata task'}}
+        </button>
+        <button class="cancel btn btn-secondary" (click)="resetProperties()">
+          Cancel
+        </button>
+      </app-edit-task-form>
+    </div>
+
+    <div class="delete-message" *ngIf="deleteDialogOpne">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="icon-box">
+            <i class="fa fa-times"></i>
+          </div>
+          <h4 class="modal-title">Are you sure?</h4>
+          <button
+            type="button"
+            class="close"
+            (click)="deleteDialogOpne = !deleteDialogOpne"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Do you really want to delete these task? This process cannot be
+            undone.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-info"
+            (click)="deleteDialogOpne = !deleteDialogOpne"
+          >
+            Cancel
+          </button>
+          <button type="button" class="btn btn-danger" (click)="onDeleteTask()">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

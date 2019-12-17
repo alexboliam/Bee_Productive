@@ -1,0 +1,37 @@
+<!-- <div class="p-col-12" *ngIf="myFiles.length > 0">
+<app-files-list [filesList]="myFiles"></app-files-list>
+</div> -->
+<div class="p-col-12 content">
+  <p-tabView (onChange)="handleUploadTab($event)">
+      <p-tabPanel
+      header="My Files"
+      leftIcon="fa fa-file-word"
+      tooltip="{{myFiles.length}} Files"
+      *ngIf="myFiles && myFiles.length > 0"
+    >
+    <app-files-list [filesList]="myFiles" (deleteFile)="handleDeleteFile($event)"></app-files-list>
+  </p-tabPanel>
+    <p-tabPanel
+      header="Documents"
+      leftIcon="fa fa-file-word"
+      tooltip="{{documentsToUpload.length}} Documents added"
+    >
+      <app-uploader
+        [filesType]="filesType"
+      ></app-uploader>
+    </p-tabPanel>
+    <p-tabPanel
+      header="Images"
+      rightIcon="fa fa-images"
+      tooltip="{{imagesToUpload.length}} Images added"
+    >
+      <app-uploader
+        [filesType]="filesType"
+      ></app-uploader>
+    </p-tabPanel>
+  </p-tabView>
+<br>
+<div *ngIf="filesType !== 0">
+  <button type="button" class="btn btn-primary btn-lg btn-block" (click)="uploadFiles()"><i class="fa fa-cloud-upload fa-2x"></i> Upload {{filesType? 'Documents' : 'Images'}}</button>
+</div>
+</div>

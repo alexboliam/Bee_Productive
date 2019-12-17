@@ -1,0 +1,153 @@
+.containerr {
+    height: 100%;
+    width: 100%;
+    background-color: #f9fbfc;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .lists {
+        width: 100%;
+        height: 100%;
+    }
+    .emptylist {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+}
+
+.darkMode {
+    background-color: #203344;
+    -webkit-box-shadow: inset 0px 0px 15px -3px rgba(26,23,26,1);
+    -moz-box-shadow: inset 0px 0px 15px -3px rgba(26,23,26,1);
+    box-shadow: inset 0px 0px 15px -3px rgba(26,23,26,1);
+}
+
+.dialog-continer {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    max-height: 100%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+    .fadeIn {
+        opacity: 1;
+        transition: opacity 0.15s linear;
+    }
+    .dialog {
+        max-width: 35%;
+        max-height: 100%;
+        position: relative;
+        background-color: #f7f7f7;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: space-between;
+        border: 1px solid black;
+        border-radius: 5px;
+        margin: auto auto 10% auto;
+        .delete-message {
+            .modal-content {
+                padding: 1.25rem;
+                border-radius: 5px;
+                border: none;
+                text-align: center;
+                font-size: 1rem;
+                .modal-header {
+                    border-bottom: none;
+                    flex-direction: column-reverse;
+                    position: relative;
+                }
+                h4 {
+                    text-align: center;
+                    font-size: 1.6rem;
+                    margin: 2rem auto 1rem auto;
+                }
+                .close {
+                    position: absolute;
+                    top: -5px;
+                    right: -2px;
+                }
+                .modal-body {
+                    color: #999;
+                }
+                .modal-footer {
+                    border: none;
+                    text-align: center;
+                    border-radius: 5px;
+                    font-size: 0.8rem;
+                    padding: 0.6rem 1rem 1.5rem;
+                }
+                .modal-footer a {
+                    color: #999;
+                }
+                .icon-box {
+                    width: 5rem;
+                    height: 5rem;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    z-index: 9;
+                    text-align: center;
+                    border: 3px solid #f15e5e;
+                }
+                .icon-box i {
+                    color: #f15e5e;
+                    font-size: 2.8rem;
+                    display: inline-block;
+                    margin-top: 0.8rem;
+                }
+                .btn {
+                    color: #fff;
+                    border-radius: 4px;
+                    background: #60c7c1;
+                    text-decoration: none;
+                    transition: all 0.4s;
+                    line-height: normal;
+                    max-width: 7.5rem;
+                    width: 10rem;
+                    border: none;
+                    min-height: 2.5rem;
+                    border-radius: 3px;
+                    margin: 0 5px;
+                }
+                .btn-info {
+                    background: #c1c1c1;
+                }
+                .btn-info:hover,
+                .btn-info:focus {
+                    background: #a8a8a8;
+                }
+                .btn-danger {
+                    background: #f15e5e;
+                }
+                .btn-danger:hover,
+                .btn-danger:focus {
+                    background: #ee3535;
+                }
+            }
+        }
+        .form {
+            .btn-primary {
+                background-color: #66c7e2;
+                border-color: transparent;
+                color: white;
+            }
+        }
+        .title {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 300;
+            font-size: 2rem;
+        }
+        .btn {
+            margin-left: 0.5rem;
+        }
+    }
+}

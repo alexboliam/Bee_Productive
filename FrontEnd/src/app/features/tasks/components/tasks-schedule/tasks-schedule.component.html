@@ -1,0 +1,58 @@
+<div class="p-col-12" [class.darkMode]="isDarkMode">
+  <div class="p-grid p-justify-around">
+    <div class="p-col-3" *ngFor="let arrList of arrContiner">
+        <h5 class="titel">
+          {{ arrList.Titel }}
+          <span *ngIf="arrList.Arr.length > 0">({{ arrList.Arr.length }})</span>
+        </h5>
+        <div>
+          <div
+            dnd-droppable
+            (onDropSuccess)="addToDropList($event, arrList)"
+            (onDragEnter)="heandelDragEnter($event, arrList)"
+            (onDragLeave)="heandelDragLeave($event, arrList)"
+            [dropZones]="['taskItem']"
+            class="droppable"
+          >
+            <div class="panel-body dnd-sortable-container">
+              <div
+                *ngFor="let task of arrList.Arr"
+                class="panel panel-default"
+                dnd-draggable
+                [dragData]="task"
+                dndEffectAllowed="move"
+                [dragEnabled]="true"
+                [dropZones]="['taskItem']"
+                (onDragSuccess)="changeMyDragList($event, arrList)"
+                (onDragStart)="heandelDragStart($event, arrList)"
+                (onDragEnd)="heandelDragEnd($event, arrList)"
+            
+              >
+                <div class="card">
+                  <span class="left_border" [ngClass]="task.priority"></span>
+                  <div class="card-body">
+                    <div class="card-headerr">
+                      <h5 class="card-title">{{ task.title }}</h5>
+                      <span class="card-menu" (click)="onShowDetails(task)">
+                        <i class="fa fa-expand"></i>
+                        <!-- <a [routerLink]="['/tasks/details', task.id]">
+                        </a> -->
+                      </span>
+                    </div>
+                    <!--  | {{ task.status }} -->
+                    <p
+                      class="card-text"
+                      [class.doneClass]="arrList.Titel === 'Done'"
+                    >
+                      {{ task.description }}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+

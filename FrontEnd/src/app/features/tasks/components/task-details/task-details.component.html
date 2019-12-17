@@ -1,0 +1,74 @@
+<!-- <pre>{{ correntTask | json }}</pre> -->
+<div class="container" [class.darkMode]="isDarkMode" *ngIf="correntTask">
+  <section>
+    <div class="header">
+      <span class="priority"></span>
+      <!-- <a [routerLink]="['/tasks/schedule']"><i class="fa fa-arrow-left"></i></a> -->
+      <span (click)="closeDetails()"><i class="fa fa-compress"></i></span>
+      <h4 class="title">{{ correntTask.title }}</h4>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <div>
+        <p>Status</p>
+        <p>{{ correntTask.status }}</p>
+      </div>
+      <div>
+        <p>Priority</p>
+        <p>{{ correntTask.priority }}</p>
+      </div>
+      <div>
+        <p>Created at</p>
+        <p>{{ correntTask.createdDtae }}</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div>
+      <h4>Description</h4>
+      <p-editor
+        [(ngModel)]="correntTask.description"
+        [style]="{ height: '200px' }"
+      ></p-editor>
+      <h4>Comment</h4>
+      <p-editor
+        [(ngModel)]="correntTask.comment"
+        [style]="{ height: '200px' }"
+      ></p-editor>
+    </div>
+  </section>
+</div>
+
+<!-- 
+    <a [routerLink]="['/tasks']">Go to schedule</a>
+  <div *ngIf="correntTask">
+    <h5>{{correntTask.title}}</h5>
+    <div class="editor">
+      <h2 style="text-align: center; font-weight: bold"><p>Word Editor</p></h2>
+      <div class="toolbar">
+        <a href="#" data-role="bold"><i class="fa fa-bold"></i></a>
+        <a href="#" data-role="italic"><i class="fa fa-italic"></i></a>
+        <a href="#" data-role="underline"><i class="fa fa-underline"></i></a>
+        <a href="#" data-role="subscript"><i class="fa fa-subscript"></i></a>
+        <a href="#" data-role="superscript"
+          ><i class="fa fa-superscript"></i
+        ></a>
+      </div>
+      <div class="content" contenteditable>
+        <p><b>DO NOT</b> touch this.</p>
+        <p><i>Ouch!</i> Stop hitting me.</p>
+        <p>This is a very <u>important</u> information.</p>
+        <p>Carbon dioxide is also known as CO<sub>2</sub>.</p>
+        <p>2<sup>2</sup> equals 4.</p>
+      </div>
+    </div>
+    <footer>
+      <p>
+        Coded with <i class="fas fa-heart" style="color: red;"></i> &amp;
+        <i class="fas fa-coffee"></i>
+      </p>
+    </footer>
+  </div>
+ -->
