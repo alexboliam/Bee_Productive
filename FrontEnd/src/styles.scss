@@ -1,0 +1,67 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~ngx-ui-switch/ui-switch.component.scss";
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
+@import '~ngx-toastr/toastr';
+@import "scss/main-scss";
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+
+/*scroll*/
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+
+// .clearfix::after{
+//     content: "";
+//     clear: both;
+//     display: table;
+// }
+
+.ui-tabview {
+  height: 100%;
+  .ui-tabview-panels{
+    height: 94%;
+    .ui-tabview-panel{
+      height: 100%;
+    }
+  }
+}
