@@ -24,6 +24,8 @@ namespace BackEnd
             services.ConfigureUnitOfWork(Configuration);
             services.ConfigureBLLServices();
 
+            services.ConfigureSwagger();
+
             services.ConfigureCors();
             services.ConfigureIISIntegration();
 
@@ -34,6 +36,13 @@ namespace BackEnd
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bee Productive API V1");
+                c.RoutePrefix = string.Empty;
+            });
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
