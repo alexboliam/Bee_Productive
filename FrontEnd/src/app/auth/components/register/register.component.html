@@ -1,0 +1,70 @@
+
+<div class="login-clean">
+  <form class="form" [formGroup]="form" (ngSubmit)="registerUser($event)">
+    <h2 class="sr-only">Register Form</h2>
+    <div class="illustration"><i class="icon ion-ios-navigate"></i></div>
+    <!-- введение пользователя -->
+    <label class="form-group">
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Username"
+        formControlName="username"
+      />
+    </label>
+
+    <!-- введение email -->
+    <label class="form-group">
+      <input
+        class="form-control"
+        type="email"
+        placeholder="Email address"
+        formControlName="email"
+      />
+    </label>
+
+    <!-- введение пароля -->
+    <label class="form-group">
+      <input
+        class="form-control"
+        type="password"
+        placeholder="Enter password"
+        formControlName="password"
+      />
+    </label>
+
+    <!-- подтверждение пароля -->
+    <label class="form-group">
+      <input
+        class="form-control"
+        type="password"
+        placeholder="Password Confirmation"
+        formControlName="passwordConfirmation"
+      />
+    </label>
+    <div class="validations" *ngIf="form.touched">
+      <span *ngIf="form.controls.username.invalid && form.controls.username.touched">
+        <i class="fa fa-times-circle" style="color: firebrick;"></i>
+        Username should be minimum 4 characters long.
+      </span>
+      <span *ngIf="form.controls.email.invalid && form.controls.email.touched">
+        <i class="fa fa-times-circle" style="color: firebrick;"></i>
+        Invalid email format
+      </span>
+      <span *ngIf="form.controls.password.invalid && form.controls.password.touched">
+        <i class="fa fa-times-circle" style="color: firebrick;"></i>
+        Password is required
+      </span>
+      <span *ngIf="form.controls.passwordConfirmation.invalid && form.controls.passwordConfirmation.touched">
+        <i class="fa fa-times-circle" style="color: firebrick;"></i>
+        Password and password confirmation should match.
+      </span>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block" type="submit">
+        Create account
+      </button>
+    </div>
+    <a routerLink="/auth/login" class="forgot">Already have an account?</a>
+  </form>
+</div>
