@@ -5,3 +5,6 @@ D:\KPI\3 курс\Bee_Productive\BackEnd\DAL\obj\Debug\netcoreapp3.0\DAL.Assembl
 D:\KPI\3 курс\Bee_Productive\BackEnd\DAL\obj\Debug\netcoreapp3.0\DAL.AssemblyInfo.cs
 D:\KPI\3 курс\Bee_Productive\BackEnd\DAL\bin\Debug\netcoreapp3.0\DAL.runtimeconfig.json
 D:\KPI\3 курс\Bee_Productive\BackEnd\DAL\bin\Debug\netcoreapp3.0\DAL.runtimeconfig.dev.json
+D:\KPI\3 курс\Bee_Productive\BackEnd\DAL\bin\Debug\netcoreapp3.0\DAL.pdb
+D:\KPI\3 курс\Bee_Productive\BackEnd\DAL\obj\Debug\netcoreapp3.0\DAL.dll
+D:\KPI\3 курс\Bee_Productive\BackEnd\DAL\obj\Debug\netcoreapp3.0\DAL.pdb
