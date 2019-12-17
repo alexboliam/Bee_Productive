@@ -3,7 +3,7 @@ using DAL.Repositories;
 
 namespace DAL.UnitOfWork_
 {
-    class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private BeeContext beeContext;
         private IBeeHiveRepository beeHiveRepository;

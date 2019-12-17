@@ -26,4 +26,4 @@ namespace DAL
         }
     }
 }
-/*"Server=.\\SQLEXPRESS;Database=StudentsLibrary;Trusted_Connection=True;"*/
+/*"Server=.\\SQLEXPRESS;Database=BeeProductiveDb;Trusted_Connection=True;"*/
