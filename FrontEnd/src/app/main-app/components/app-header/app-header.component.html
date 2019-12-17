@@ -1,0 +1,13 @@
+<div class="header" [class.darkMode]="isDarkMode">
+  <img class="header__logo" src="assets/img/logo.png" />
+  <div class="header__user-box" *ngIf="isAuthenticated && user">
+    <div class="user">
+      <img class="header__user" src="{{ user.photoURL }}" />
+      <span>Hello, {{ user.username }}</span>
+      <span>{{ currentDateAndTime }}</span>
+    </div>
+    <span class="header__log-out" (click)="logoutUser()">
+      <i class="fa fa-sign-out"></i>
+    </span>
+  </div>
+</div>

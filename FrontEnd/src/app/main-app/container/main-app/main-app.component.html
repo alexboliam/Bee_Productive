@@ -1,0 +1,51 @@
+<!-- <div class="main">
+  <div class="header" *ngIf="isAuthenticated">
+    <app-header
+      [isAuthenticated]="isAuthenticated"
+      [user]="userSettings"
+      [isDarkMode]="isDarkMode"
+      (logout)="onLogout()"
+      (addToDoState)="heandelAddToDoState($event)"
+      (darkModeState)="changeThemeMode($event)"
+    ></app-header>
+  </div>
+  <div class="wrapper" [class.darkMode]="isDarkMode">
+    <div class="sidebar" *ngIf="isAuthenticated">
+      <app-nav [isDarkMode]="isDarkMode"></app-nav>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div> -->
+<!-- <div class="footer">
+    <app-footer class="app-footer" *ngIf="isAuthenticated"></app-footer>
+  </div>  
+</div>-->
+<!-- ========================================= -->
+<div class="p-grid page-container">
+  <div class="p-col-12 header" *ngIf="isAuthenticated">
+    <app-header
+      [isAuthenticated]="isAuthenticated"
+      [user]="userSettings"
+      [isDarkMode]="isDarkMode"
+      [currentDateAndTime]="currentDateAndTime"
+      (logout)="onLogout()"
+      (addToDoState)="heandelAddToDoState($event)"
+      (darkModeState)="changeThemeMode($event)"
+    ></app-header>
+  </div>
+  <div class="p-col-12 content-wrap">
+    <div class="p-grid">
+      <div class="p-col-fixed nav" *ngIf="isAuthenticated">
+        <app-nav [isDarkMode]="isDarkMode"></app-nav>
+      </div>
+      <div class="p-col">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="p-col-12 footer">
+    <app-footer [isDarkMode]="isDarkMode"></app-footer>
+  </div> -->
+</div>
+

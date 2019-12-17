@@ -1,0 +1,242 @@
+.continer {
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    .menu-content {
+        .list-continer {
+            list-style: none;
+            .list-item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 0.8rem;
+                cursor: pointer;
+                -moz-transition: all 0.2s ease-in;
+                -o-transition: all 0.2s ease-in;
+                -webkit-transition: all 0.2s ease-in;
+                transition: all 0.2s ease-in;
+                border-left: transparent solid 0.4375rem;
+                .icon {
+                    font-size: 1.1rem;
+                    color: #2a324e;
+                }
+                .link {
+                    font-size: 0.8rem;
+                    color: #2a324e;
+                }
+
+            }
+            .active {
+                border-left: #264f78 solid 0.4375rem;
+                .icon {
+                    color: #264f78;
+                }
+            }
+        }
+    }
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-button-container {
+    display: none;
+    float: right;
+    padding: 18px 20px;
+    cursor: pointer;
+    &:after {
+        content: "\2261";
+        font-size: 1rem;
+        color: white;
+    }
+}
+
+.darkMode {
+    background-color: #172531;
+    .menu-content {
+        .list-continer {
+            .active {
+                border-left: #3583c9 solid 0.4375rem;
+                .icon {
+                    color: #3583c9;
+                }
+                .link {
+                    color: #f0f4f8;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 112.5em) {
+    // 1800px
+}
+
+@media screen and (max-width: 75em) {
+    // 1200px
+}
+
+@media screen and (max-width: 56.25em) {
+    // 900px
+    .continer {
+        width: 5rem;
+        .list-continer {
+            list-style: none;
+            .list-item {
+                position: relative;
+                .link {
+                    display: none;
+                }
+                .icon {
+                    font-size: 1.5rem;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 37.5em) {
+    //    600px
+    .continer {
+        width: 100%;
+        .menu-content {
+            height: inherit;
+            .list-continer {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                height: 100%;
+                .list-item {
+                    border-left: none;
+                    padding: 0.3rem 1rem;
+                    border-bottom: transparent solid 0.4375rem;
+                    .icon {
+                        font-size: 1.1rem;
+                        color: #2a324e;
+                    }
+                    .link {
+                        font-size: 0.8rem;
+                        display: block;
+                        color: #2a324e;
+                    }
+                }
+                .active {
+                    border-bottom: #264f78 solid 0.4375rem;
+                    .icon {
+                        color: #264f78;
+                    }
+                }
+            }
+        }
+    }
+    .darkMode {
+        background-color: #223342;
+        .menu-content {
+            .list-continer {
+                .list-item {
+                    .icon, .link {
+                        color: #172531;
+                    }
+                }
+                .active {
+                    border-left: none;
+                    border-bottom: #3583c9 solid 0.4375rem;
+                    .icon {
+                        color: #3583c9;
+                    }
+                    .link {
+                        color: #f0f4f8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 26em) {
+    // 416px
+    .continer {
+        display: none;
+        background-color: #f1f1f1;
+        .menu-content {
+            .list-continer {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 100%;
+                .list-item {
+                    padding: 1rem;
+                    border-bottom: none;
+                    .icon {
+                        font-size: 1.1rem;
+                        color: #2a324e;
+                    }
+                    .link {
+                        font-size: 0.8rem;
+                        display: block;
+                        color: #2a324e;
+                    }
+                }
+                .active {
+                    border-bottom: none;
+                    background-color: #264f78;
+                }
+            }
+        }
+    }
+
+    .darkMode {
+        background-color: #223342;
+        .menu-content {
+            .list-continer {
+                .list-item {
+                    .icon, .link {
+                        color: #172531;
+                    }
+                }
+                .active {
+                    border-bottom: none;
+                    .icon {
+                        color: #3583c9;
+                    }
+                    .link {
+                        color: #f0f4f8;
+                    }
+                }
+            }
+        }
+    }
+
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+    }
+    .menu-toggle:checked~.continer {
+        visibility: visible;
+        max-height: 100%;
+        -webkit-transition-delay: 1s;
+        transition-delay: 1s;
+        transition: 0.35s linear, max-height 0.35s ease-in-out 200ms;
+        height: 100%;
+        position: fixed;
+        z-index: 1;
+        width: 100%;
+        display: block;
+    }
+    .menu-button-container {
+        display: block; 
+        z-index: 10;
+    position: relative;
+        // float: right;
+        // padding: 18px 20px;
+        // cursor: pointer;
+        // &:after {
+        //     content: "\2261";
+        //     font-size: 1.8em;
+        //   }
+    }
+}

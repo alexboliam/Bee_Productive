@@ -1,0 +1,36 @@
+.footer {
+  background-color: #dadada;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  // width: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  font: normal 1rem sans-serif;
+  padding: 1rem;
+  .social-links {
+    font-weight: bold;
+    color: #ffffff;
+    padding-bottom: 1rem;
+  }
+  .social-links li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    margin-left: 2rem;
+    .fa {
+      color: #9ca0a3;
+    }
+  }
+  p {
+    color: #8f9296;
+    font-size: 0.87rem;
+    margin: 0;
+  }
+}
+
+.darkMode {
+  background-color: #292c2f;
+}

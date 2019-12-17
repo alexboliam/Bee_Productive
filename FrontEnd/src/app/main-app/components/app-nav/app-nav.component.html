@@ -1,0 +1,24 @@
+<input class="menu-toggle" id="menu-toggle" type="checkbox" />
+<label class="menu-button-container" for="menu-toggle">
+  <div class="menu-button"></div>
+</label>
+<div class="continer" [class.darkMode]="isDarkMode">
+  <div class="menu-content">
+    <ul class="list-continer">
+      <li routerLinkActive="active" *ngFor="let route of routesArray">
+        <a class="list-item" [routerLink]="route.path">
+          <span class="icon"><i [class]="route.icon"></i></span>
+          <span class="link">{{ route.label }}</span>
+        </a>
+      </li>
+      <!-- <li routerLinkActive="active">
+        <a class="list-item" [routerLink]="['/notification']">
+          <span class="icon">
+            <i class="fa fa-bell" matBadge="15" matBadgeColor="warn"></i>
+          </span>
+          <span class="link">Notification</span>
+        </a>
+      </li> -->
+    </ul>
+  </div>
+</div>
