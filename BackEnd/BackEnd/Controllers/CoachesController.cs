@@ -34,7 +34,7 @@ namespace BackEnd.Controllers
             try
             {
                 var coaches = coachService.GetAllCoaches();
-                return Ok(mapper.Map<IEnumerable<CoachPL>>(coaches));
+                return Ok(mapper.Map<IEnumerable<CoachPL>>(coaches.ToList()));
             }
             catch (Exception ex)
             {

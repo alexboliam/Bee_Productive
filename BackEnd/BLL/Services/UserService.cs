@@ -23,7 +23,7 @@ namespace BLL.Services
 
         public IEnumerable<UserDto> GetAllUsers()
         {
-            var users = unit.Users.FindAll();
+            var users = unit.Users.FindAll().ToList();
             return mapper.Map<IEnumerable<UserDto>>(users);
         }
 

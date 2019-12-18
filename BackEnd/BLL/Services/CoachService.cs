@@ -22,7 +22,7 @@ namespace BLL.Services
 
         public IEnumerable<CoachDto> GetAllCoaches()
         {
-            var coaches = unit.Coaches.FindAll();
+            var coaches = unit.Coaches.FindAll().ToList();
             return mapper.Map<IEnumerable<CoachDto>>(coaches);
         }
 

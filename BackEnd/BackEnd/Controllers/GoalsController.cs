@@ -36,7 +36,7 @@ namespace BackEnd.Controllers
                 var goals = goalService.GetAllGoalsByUserId(userId);
                 if (goals != null)
                 {
-                    return Ok(mapper.Map<IEnumerable<GoalPL>>(goals));
+                    return Ok(mapper.Map<IEnumerable<GoalPL>>(goals.ToList()));
                 }
                 else
                 {
@@ -186,7 +186,7 @@ namespace BackEnd.Controllers
                 var subgoals = goalService.GetAllSubgoalsByGoalId(goalId);
                 if (subgoals != null)
                 {
-                    return Ok(mapper.Map<IEnumerable<SubgoalPL>>(subgoals));
+                    return Ok(mapper.Map<IEnumerable<SubgoalPL>>(subgoals.ToList()));
                 }
                 else
                 {

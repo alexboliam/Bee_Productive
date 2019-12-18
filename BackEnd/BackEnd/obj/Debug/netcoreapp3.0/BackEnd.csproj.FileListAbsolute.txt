@@ -139,7 +139,7 @@ D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\bin\Debug\netcoreapp3.0\Microso
 D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\bin\Debug\netcoreapp3.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\obj\Debug\netcoreapp3.0\BackEnd.MvcApplicationPartsAssemblyInfo.cs
-D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\obj\Debug\netcoreapp3.0\BackEnd.MvcApplicationPartsAssemblyInfo.cache
 D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\bin\Debug\netcoreapp3.0\BackEnd.xml
 D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\obj\Debug\netcoreapp3.0\BackEnd.xml
+D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\obj\Debug\netcoreapp3.0\BackEnd.MvcApplicationPartsAssemblyInfo.cs
+D:\KPI\3 курс\Bee_Productive\BackEnd\BackEnd\obj\Debug\netcoreapp3.0\BackEnd.MvcApplicationPartsAssemblyInfo.cache

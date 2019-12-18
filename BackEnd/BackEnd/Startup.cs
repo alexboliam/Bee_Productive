@@ -32,6 +32,7 @@ namespace BackEnd
             services.AddControllers();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
             .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+            services.ConfigContextForMigrations(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -35,7 +35,7 @@ namespace BackEnd.Controllers
             try
             {
                 var users = userService.GetAllUsers();
-                return Ok(mapper.Map<IEnumerable<UserPL>>(users));
+                return Ok(mapper.Map<IEnumerable<UserPL>>(users.ToList()));
             }
             catch (Exception ex)
             {

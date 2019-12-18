@@ -18,6 +18,7 @@ namespace DAL
         {
             this.connection = connection;
         }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseLazyLoadingProxies()

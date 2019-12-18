@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using BLL.Interfaces;
 using BLL.Services;
+using DAL;
 using DAL.Interfaces;
 using DAL.UnitOfWork_;
 using Microsoft.AspNetCore.Builder;
@@ -17,7 +18,7 @@ namespace BackEnd.Extentions
     {
         public static void ConfigureUnitOfWork(this IServiceCollection services, IConfiguration config)
         {
-            var connectionString = config["dbConnection:connectionString"];
+            var connectionString = config["ConnectionStrings:DefaultConnection"];
             services.AddScoped<IUnitOfWork, UnitOfWork>(ServiceProvider =>
             {
                 return new UnitOfWork(connectionString);
@@ -32,6 +33,14 @@ namespace BackEnd.Extentions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IGoalService, GoalService>();
             services.AddScoped<ICoachService, CoachService>();
+        }
+        public static void ConfigContextForMigrations(this IServiceCollection services, IConfiguration config)
+        {
+            var connectionString = config["ConnectionStrings:DefaultConnection"];
+            services.AddScoped<BeeContext, BeeContext>(ServiceProvider =>
+            {
+                return new BeeContext(connectionString);
+            });
         }
         public static void ConfigureSwagger(this IServiceCollection services)
         {
