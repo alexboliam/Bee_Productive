@@ -18,6 +18,124 @@
             <param name="loginForm">Model shown in SWAGGER example.</param>
             <returns></returns>
         </member>
+        <member name="M:BackEnd.Controllers.CoachesController.GetAllCoaches">
+            <summary>
+            Get collection of all registered coaches.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.CoachesController.GetCoachByLogin(System.String)">
+            <summary>
+            Get one coach by it's ID. Recommend use to get info about specified coach.
+            </summary>
+            <param name="coachLogin"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.CoachesController.UpdateCoach(BackEnd.Models.CoachPL)">
+            <summary>
+            Update coach's fields. Json model must contain the same ID as updatable coach.
+            </summary>
+            <param name="coach">Coach model. Must contain the same ID as updatable coach.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.CoachesController.DeleteCoach(BackEnd.Models.CoachPL)">
+            <summary>
+            Delete specified coach. Json model must contain the same ID as deletable coach.
+            </summary>
+            <param name="coach">Coach model. Must contain the same ID as deletable coach.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.CoachesController.GetCoachInfoByCoachId(System.Guid)">
+            <summary>
+            Get information about specified coach. ID of coach must be specified in header.
+            </summary>
+            <param name="coachId">CoachId - ID of coach to get information</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.CoachesController.UpdateCoachInfo(BackEnd.Models.CoachInfoPL)">
+            <summary>
+            Update specified coach info. ID and Coach's ID must be specified.
+            </summary>
+            <param name="info">Model of coach's information. ID and Coach's ID must be specified.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.CoachesController.DeleteCoachInfo(BackEnd.Models.CoachInfoPL)">
+            <summary>
+            Delete specified coach info. ID and Coach's ID must be specified.
+            </summary>
+            <param name="info">Model of coach's information. ID and Coach's ID must be specified.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.GetAllGoalsByUserId(System.Guid)">
+            <summary>
+            Get all goals for user specified by userId.
+            </summary>
+            <param name="userId">UserId parameter must be defined.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.GetGoalById(System.Guid)">
+            <summary>
+            Get goal by it's ID.
+            </summary>
+            <param name="goalId">GoalId parameter must be defined.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.CreateGoal(BackEnd.Models.GoalPL)">
+            <summary>
+            Create goal for specified goal by goalId. JSON model should have all fields filled, EXCEPT goalId and nested models.
+            </summary>
+            <param name="goal">Model must have all fields filled, EXCEPT goalId and nested models.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.UpdateGoal(BackEnd.Models.GoalPL)">
+            <summary>
+            Update goal specified by it's ID. JSON model should have all fields filled, EXCEPT nested models.
+            </summary>
+            <param name="goal">All fields **must** be filled, **except** nested models.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.DeleteGoal(BackEnd.Models.GoalPL)">
+            <summary>
+            Delete goal specified by it's ID. JSON model should have all fields filled, EXCEPT nested models.
+            </summary>
+            <param name="goal">All fields **must** be filled, **except** nested models.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.GetSubgoalsByGoalId(System.Guid)">
+            <summary>
+            Get all subgoals for goal specified by goalId. 
+            </summary>
+            <param name="goalId">GoalId parameter must be defined.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.GetSubgoalById(System.Guid)">
+            <summary>
+            Get subgoal by it's ID.
+            </summary>
+            <param name="subgoalId">SubgoalId parameter must be defined.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.CreateSubgoal(BackEnd.Models.SubgoalPL)">
+            <summary>
+            Create subgoal for specified goal by goalId. JSON model should have all fields filled, EXCEPT subgoalId and nested models.
+            </summary>
+            <param name="subgoal">Model must have all fields filled, EXCEPT subgoalId and nested models.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.UpdateSubgoal(BackEnd.Models.SubgoalPL)">
+            <summary>
+            Update subgoal specified by it's ID. JSON model should have all fields filled, EXCEPT nested models.
+            </summary>
+            <param name="subgoal">All fields **must** be filled, **except** nested models.</param>
+            <returns></returns>
+        </member>
+        <member name="M:BackEnd.Controllers.GoalsController.DeleteSubgoal(BackEnd.Models.SubgoalPL)">
+            <summary>
+            Delete subgoal specified by it's ID. JSON model should have all fields filled, EXCEPT nested models.
+            </summary>
+            <param name="subgoal"> All fields **must** be filled, **except** nested models.</param>
+            <returns></returns>
+        </member>
         <member name="M:BackEnd.Controllers.UsersController.GetAllUsers">
             <summary>
             Get collection of all registered users. Recommended to use only in admin's panel.

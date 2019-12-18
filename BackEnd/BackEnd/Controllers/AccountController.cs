@@ -80,7 +80,7 @@ namespace BackEnd.Controllers
                 }
                 else
                 {
-                    return StatusCode(409, "Unable to log in. User with this login or password is not found.");
+                    return StatusCode(404, "Unable to log in. User with this login or password is not found.");
                 }
             }
             catch (Exception ex)

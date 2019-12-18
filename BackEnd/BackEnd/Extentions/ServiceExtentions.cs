@@ -27,6 +27,12 @@ namespace BackEnd.Extentions
         {
             services.AddAutoMapper(typeof(Startup));
         }
+        public static void ConfigureBLLServices(this IServiceCollection services)
+        {
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IGoalService, GoalService>();
+            services.AddScoped<ICoachService, CoachService>();
+        }
         public static void ConfigureSwagger(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
@@ -48,13 +54,6 @@ namespace BackEnd.Extentions
                 c.IncludeXmlComments(xmlPath);
             });
 
-        }
-        public static void ConfigureBLLServices(this IServiceCollection services)
-        {
-            services.AddScoped<IUserService, UserService>();
-            //services.AddScoped<IBooksService, BooksService>();
-            //services.AddScoped<ILibraryCardsService, LibraryCardsService>();
-            //services.AddScoped<IAuthorsService, AuthorsService>();
         }
 
         public static void ConfigureCors(this IServiceCollection services)

@@ -60,7 +60,7 @@ namespace BackEnd.Controllers
                 }
                 else
                 {
-                    return StatusCode(409, "User with this login was not found");
+                    return StatusCode(404, "User with this login was not found");
                 }
             }
             catch (Exception ex)
@@ -94,7 +94,7 @@ namespace BackEnd.Controllers
                 }
                 else
                 {
-                    return StatusCode(409, "Unable to update user. User with specified ID was not not found.");
+                    return StatusCode(404, "Unable to update user. User with specified ID was not not found.");
                 }
             }
             catch (Exception ex)
@@ -128,7 +128,7 @@ namespace BackEnd.Controllers
                 }
                 else
                 {
-                    return StatusCode(409, "Unable to delete user. User with specified ID was not not found.");
+                    return StatusCode(404, "Unable to delete user. User with specified ID was not not found.");
                 }
             }
             catch (Exception ex)
@@ -183,7 +183,7 @@ namespace BackEnd.Controllers
                 }
                 else
                 {
-                    return StatusCode(409, "Unable to update user info. User info with specified ID was not not found.");
+                    return StatusCode(404, "Unable to update user info. User info with specified ID was not not found.");
                 }
             }
             catch (Exception ex)
@@ -217,7 +217,7 @@ namespace BackEnd.Controllers
                 }
                 else
                 {
-                    return StatusCode(409, "Unable to delete user info. User info with specified ID was not not found.");
+                    return StatusCode(404, "Unable to delete user info. User info with specified ID was not not found.");
                 }
             }
             catch (Exception ex)
